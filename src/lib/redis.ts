@@ -1,4 +1,4 @@
-import { Redis } from '@upstash/redis'
+﻿import { Redis } from "@upstash/redis"
 
 export const redis = new Redis({
   url: process.env.KV_REST_API_URL!,
@@ -10,16 +10,16 @@ export async function cached<T>(
   fn: () => Promise<T>,
   ttl = 60
 ): Promise<T> {
-  const cached = await redis.get<T>(key)
-  if (cached !== null) return cached
+  const hit = await redis.get<T>(key)
+  if (hit !== null) return hit
   const value = await fn()
-  await redis.setex(key, ttl, value as string)
+  await redis.set(key, value, { ex: ttl })
   return value
 }
 
 export async function invalidatePrefix(prefix: string): Promise<void> {
   const keys = await redis.keys(`${prefix}*`)
   if (keys.length > 0) {
-    await redis.del(...keys)
+    await redis.del(...(keys as [string, ...string[]]))
   }
 }
