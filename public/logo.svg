@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <!-- Icon: document with lines -->
+  <rect x="4" y="4" width="28" height="32" rx="4" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+  <rect x="9" y="12" width="18" height="2" rx="1" fill="#22d3ee"/>
+  <rect x="9" y="17" width="14" height="2" rx="1" fill="#94a3b8"/>
+  <rect x="9" y="22" width="16" height="2" rx="1" fill="#94a3b8"/>
+  <rect x="9" y="27" width="10" height="2" rx="1" fill="#94a3b8"/>
+  <!-- Wordmark -->
+  <text x="40" y="26" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#f1f5f9" letter-spacing="-0.5">Note</text>
+  <text x="79" y="26" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#22d3ee" letter-spacing="-0.5">Box</text>
+</svg>
